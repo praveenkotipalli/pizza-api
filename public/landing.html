@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentic Italian Pizza API</title>
+    <style>
+      /* Basic styles for the website */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        /* background-color: #f0f0f0; */
+        background-image: linear-gradient(to right, #4facfe, #00f2fe);
+        border-bottom: 1.6rem solid #333;
+        background-color: #333;
+      }
+
+      header,
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      footer {
+        margin: 0 auto;
+        padding: 0px;
+        /* border: 1px solid green; */
+        /* border-left: 100px; */
+        width: 1550px;
+        /* padding: 4000px; */
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        padding: 10px 0;
+      }
+
+      main {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .aha {
+        /* background-color: #f5f3f3; */
+        background-image: linear-gradient(to left, #4facfe, #00f2fe);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        margin-top: 20px;
+        border-radius: 5px;
+        align-items: center;
+        text-align: center;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      footer {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 1px;
+        position: fixed;
+        bottom: 0;
+        /* width: 1000px; */
+      }
+
+      .dish {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .dish img {
+        max-width: 100%;
+        border-radius: 5px;
+        width: 12rem;
+        aspect-ratio: 1;
+        align-self: start;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #333;
+        color: #fff;
+        width: 200px; /* Adjust width for HTTP Method column */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to <strong>Praveen's Pizza API</strong></h1>
+      <p>
+        Explore our delicious pizzas baked in a stone oven with organic
+        ingredients.
+      </p>
+    </header>
+
+    <main>
+      <section id="overview">
+        <h2>About Our API</h2>
+        <p>
+          Discover authentic Italian pizzas through our API. We offer a variety
+          of pizzas, all baked in a stone oven using organic ingredients,
+          ensuring each pizza is delicious and flavorful.
+        </p>
+      </section>
+      <div class="aha">
+        <p>
+          get our <strong>API</strong> :-
+          <a href="https://pizza-api-3-158s.onrender.com/api/v1/pizzas"
+            >https://pizza-api-3-158s.onrender.com/api/v1/pizzas</a
+          >
+        </p>
+      </div>
+
+      <section id="api-info">
+        <h2>API Information</h2>
+        <table>
+          <tr>
+            <th>HTTP Method</th>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td>
+              <a href="https://pizza-api-3-158s.onrender.com/api/v1/pizzas"
+                >https://pizza-api-3-158s.onrender.com/api/v1/pizzas</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td>Returns a list of all available pizzas.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="dishes">
+        <h2>Our Pizzas</h2>
+        <div id="pizza-list">
+          <!-- Pizzas will be dynamically populated here -->
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+          For more information or support, contact us at
+          <strong>2200032132cseh@gmail.com</strong>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p style="color: #fff">
+        ©️
+        <strong
+          ><a
+            style="color: #fff"
+            href="https://www.linkedin.com/in/praveenkumarkotipalli/"
+            >PraveenInc</a
+          ></strong
+        >, 2024
+      </p>
+    </footer>
+
+    <script>
+      // JavaScript code to dynamically populate pizzas
+      const pizzaData = [
+        {
+          name: "Focaccia",
+          description:
+            "A classic Italian bread, drizzled with olive oil and topped with fresh rosemary.",
+          price: 6,
+          photoName: "pizzas/focaccia.jpg",
+          soldOut: false,
+        },
+        {
+          name: "Pizza Margherita",
+          description:
+            "A traditional pizza topped with tomato sauce, fresh mozzarella, and basil leaves.",
+          price: 10,
+          photoName: "pizzas/margherita.jpg",
+          soldOut: false,
+        },
+        {
+          name: "Pizza Spinaci",
+          description:
+            "A delightful pizza featuring tomato sauce, mozzarella cheese, spinach, and creamy ricotta.",
+          price: 12,
+          photoName: "pizzas/spinaci.jpg",
+          soldOut: false,
+        },
+        {
+          name: "Pizza Funghi",
+          description:
+            "A flavorful pizza topped with tomato sauce, mozzarella cheese, mushrooms, and caramelized onions.",
+          price: 12,
+          photoName: "pizzas/funghi.jpg",
+          soldOut: false,
+        },
+        {
+          name: "Pizza Salamino",
+          description:
+            "A hearty pizza with tomato sauce, mozzarella cheese, and spicy pepperoni slices.",
+          price: 15,
+          photoName: "pizzas/salamino.jpg",
+          soldOut: true,
+        },
+        {
+          name: "Pizza Prosciutto",
+          description:
+            "An exquisite pizza featuring tomato sauce, mozzarella cheese, savory prosciutto, fresh arugula, and creamy burrata cheese.",
+          price: 18,
+          photoName: "pizzas/prosciutto.jpg",
+          soldOut: false,
+        },
+      ];
+
+      const pizzaListContainer = document.getElementById("pizza-list");
+      pizzaData.forEach((pizza) => {
+        const pizzaElement = document.createElement("div");
+        pizzaElement.classList.add("dish");
+        pizzaElement.innerHTML = `
+                <h3>${pizza.name}</h3>
+                <p>${pizza.description}</p>
+                ${pizza.soldOut ? '<p style="color: red;">Sold Out</p>' : ""}
+                <img src="${pizza.photoName}" alt="${pizza.name}">
+            `;
+        pizzaListContainer.appendChild(pizzaElement);
+      });
+    </script>
+  </body>
+</html>

@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 //ROUTES
 app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/public/main.html`);
+  res.sendFile(`${__dirname}/public/landing.html`);
 });
 
 app.use("/api/v1/pizzas", pizzaRouter);
